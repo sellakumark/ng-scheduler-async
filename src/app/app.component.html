@@ -1,11 +1,1 @@
-<!-- <ejs-grid #grid [dataSource]='data | async' allowPaging='true' [editSettings]='editSettings' [toolbar]='toolbar'
-    (dataSourceChanged)='dataSourceChanged($event)' (dataStateChange)= 'dataStateChange($event)'>
-                    <e-columns>
-                    <e-column field='id' headerText='Customer ID' width='120' textAlign='Right' isPrimaryKey='true'></e-column>
-                    <e-column field= "name" headerText="Customer Name" width="150"></e-column>
-                    </e-columns>
-                </ejs-grid> -->
-
-<div *ngIf="appointments?.length">
-    <ejs-schedule #scheduleObj width='100%' height='550px' [selectedDate]='selectedDate' [eventSettings]='eventSettings' (created)="onCreated($event)" (dataBinding)="onDataBinding($event)" (dataSourceChanged)="onDataSourceChanged($event)" (dataStateChange)="onDataStateChange($event)"></ejs-schedule>
-</div>
+<ejs-schedule #scheduleObj width='100%' height='600px' [selectedDate]="selectedDate" (dataBinding)="onDataBinding($event)" (actionBegin)="onActionBegin($event)" (navigating)="onNavigation()"></ejs-schedule>
